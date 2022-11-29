@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <title>DESAFIO AU</title>
+</head>
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: #f5f5f5;
+    }
+
+
+    main {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+        align-content: center;
+    }
+
+    main section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        width: 80%;
+        height: 100%;
+    }
+
+    @media screen and (max-width: 768px) {
+        main {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+        
+</style>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <section>
+            <section>
+                <h1>DESAFIO ACADEMIA DO UNIVERSITÁRIO</h1>
+                <p>Defina o horário para verificar os restaurantes abertos do arquivo csv</p>
+                <input type="time" name="timeForVerification" id="timeForVerification">
+                <br>
+                <button onclick="checkRestaurants()" style="margin-top: 8px;">Verificar</button>
+            </section>
+            <section class="main__section">
+                <h1 id="restaurantsListTitle"></h1>
+                <ol id="restaurantsList">
+                    
+                </ol>
+            </section>
+        </section>
+        <section>
+            <p>
+                <b>
+                    Todos os restaurantes
+                </b>
+            </p>
+            <ol id="allRestaurantsList">
+            
+            </ol>
+
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+<script>
+    const url = `http://172.27.0.4:9090/restaurants/restaurant-hours.csv/99999`;
+    // ajax call post
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.onload = function () {
+        if (this.status === 200) {
+            // console.log(this.responseText);
+            list_of_restaurants = JSON.parse(this.responseText);
+            const restaurantsList = document.getElementById('allRestaurantsList');
+            restaurantsList.innerHTML = '';
+            for (let i = 0; i < list_of_restaurants.length; i++) {
+                console.log(list_of_restaurants[i]);
+                const restaurantsList = document.getElementById('allRestaurantsList');
+                const li = document.createElement('li');
+                li.appendChild(document.createTextNode(list_of_restaurants[i]['RestaurantName']+" - "+list_of_restaurants[i]['OpenHours']));
+                restaurantsList.appendChild(li);
+            }
+            
+        }
+    }
+    xhr.send();
+
+    function checkRestaurants() {
+        // Get the time from the input
+        // Send the time to the backend to check if there are restaurants open
+        // If there are restaurants open, show them in the screen as a list
+        const timeForVerification = document.getElementById('timeForVerification').value.replace(':', '');
+        console.log(timeForVerification);
+        const url = `http://172.27.0.4:9090/restaurants/restaurant-hours.csv/${timeForVerification}`;
+        // ajax call post
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.onload = function () {
+            if (this.status === 200) {
+                // console.log(this.responseText);
+                list_of_restaurants = JSON.parse(this.responseText);
+                const restaurantsListTitle = document.getElementById('restaurantsListTitle');
+                restaurantsListTitle.innerHTML = 'Restaurantes abertos';
+                const restaurantsList = document.getElementById('restaurantsList');
+                restaurantsList.innerHTML = '';
+                for (let i = 0; i < list_of_restaurants.length; i++) {
+                    console.log(list_of_restaurants[i]);
+                    const restaurantsList = document.getElementById('restaurantsList');
+                    const li = document.createElement('li');
+                    li.appendChild(document.createTextNode(list_of_restaurants[i]['RestaurantName']+" - "+list_of_restaurants[i]['OpenHours']));
+                    restaurantsList.appendChild(li);
+                }
+                
+            }
+        }
+        xhr.send();
+    }
+</script>
+</html>

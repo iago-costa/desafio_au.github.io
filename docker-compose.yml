@@ -1,0 +1,40 @@
+version: "3.3"
+services:
+  api_desafio_au:
+    container_name: api_desafio_au
+    build: 
+      context: .
+      dockerfile: Dockerfile.api_desafio_au
+    ports:
+      - ${API_PORT}:9090
+    volumes:
+      - .:/api_desafio_au
+    working_dir: /api_desafio_au
+    command: bash -c 'yarn server'
+    networks:
+      default:
+        ipv4_address: ${API_IP}
+
+  front_desafio_au:
+    container_name: front_desafio_au
+    build: 
+      context: .
+      dockerfile: Dockerfile.front_desafio_au
+    ports:
+      - ${FRONT_PORT}:9000
+    working_dir: /front_desafio_au
+    command: bash -c 'yarn front'
+    volumes:
+      - .:/front_desafio_au
+    networks:
+      default:
+        ipv4_address: ${FRONT_IP}
+
+networks:
+  default:
+    name: desafio_au
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.27.0.0/16"
+          gateway: "172.27.0.1"

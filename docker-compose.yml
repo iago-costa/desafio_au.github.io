@@ -10,7 +10,7 @@ services:
     volumes:
       - .:/api_desafio_au
     working_dir: /api_desafio_au
-    command: bash -c 'yarn server'
+    command: bash -c 'yarn install && yarn server'
     networks:
       default:
         ipv4_address: ${API_IP}
@@ -23,7 +23,7 @@ services:
     ports:
       - ${FRONT_PORT}:9000
     working_dir: /front_desafio_au
-    command: bash -c 'yarn front'
+    command: bash -c 'yarn install && yarn front'
     volumes:
       - .:/front_desafio_au
     networks:

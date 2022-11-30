@@ -23,52 +23,52 @@ O padrão de organização de código utilizado foi o MVC, pois é um padrão de
 
 
 #### Instalação de dependencias utilizadas no desafio
-yarn add typescript ts-node -d ts-node-dev @types/node // instalando dependencias de desenvolvimento para o typescript em conjunto com node
-yarn add body-parser // para receber os dados do body e transformar em json
-yarn add dotenv --dev @types/dotenv // para utilizar as variaveis de ambiente no arquivo .env
-yarn add express --dev @types/express // Para utilizar o express na criação de rotas para a API
-yarn add csv-parse --dev @types/csv-parse // para ler o arquivo csv
-yarn add cors --dev @types/cors // para permitir o acesso a API de qualquer origem
-yarn tsc --init // inicializa as configurações do typescript
-yarn add --dev ts-jest @jest/globals // para utilizar o jest para testes unitários
-yarn ts-jest config:init // inicializa as configurações do jest
+    - yarn add typescript ts-node -d ts-node-dev @types/node // instalando dependencias de desenvolvimento para o typescript em conjunto com node
+    - yarn add body-parser // para receber os dados do body e transformar em json
+    - yarn add dotenv --dev @types/dotenv // para utilizar as variaveis de ambiente no arquivo .env
+    - yarn add express --dev @types/express // Para utilizar o express na criação de rotas para a API
+    - yarn add csv-parse --dev @types/csv-parse // para ler o arquivo csv
+    - yarn add cors --dev @types/cors // para permitir o acesso a API de qualquer origem
+    - yarn tsc --init // inicializa as configurações do typescript
+    - yarn add --dev ts-jest @jest/globals // para utilizar o jest para testes unitários
+    - yarn ts-jest config:init // inicializa as configurações do jest
 
 #### inicialização da API
-yarn ts-node ./api/server.ts
+    - yarn ts-node ./api/server.ts
 
 #### inicialização da FRONT
-yarn ts-node ./front/server.ts
+    - yarn ts-node ./front/server.ts
 
 
 #### Testes unitários de funções
-yarn add --dev ts-jest @jest/globals // para utilizar o jest para testes unitários
-yarn ts-jest config:init // inicializa as configurações do jest
-yarn test // executa os testes unitários
-yarn jest // executa os testes unitários
+    - yarn add --dev ts-jest @jest/globals // para utilizar o jest para testes unitários
+    - yarn ts-jest config:init // inicializa as configurações do jest
+    - yarn test // executa os testes unitários
+    - yarn jest // executa os testes unitários
 
 
 #### Links para documentação das dependencias utilizadas
-https://csv.js.org/parse/
-https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
-https://www.typescriptlang.org/
-https://jestjs.io/docs/getting-started#using-typescript
-https://www.toptal.com/express-js/nodejs-typescript-rest-api-pt-2
+    - https://csv.js.org/parse/
+    - https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
+    - https://www.typescriptlang.org/
+    - https://jestjs.io/docs/getting-started#using-typescript
+    - https://www.toptal.com/express-js/nodejs-typescript-rest-api-pt-2
 
 
 #### exemplo de requisição na api
-curl --location --request POST '0.0.0.0:9090/time/verification' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "fileName": "restaurant-hours.csv",
-    "timeForVerification": 2300
-}'
+    curl --location --request POST '0.0.0.0:9090/time/verification' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "fileName": "restaurant-hours.csv",
+        "timeForVerification": 2300
+    }'
 
 
-POST - 0.0.0.0:9090/time/verification
-{
-    "fileName": "restaurant-hours.csv",
-    "timeForVerification": 2300
-}
+    POST - 0.0.0.0:9090/time/verification
+    {
+        "fileName": "restaurant-hours.csv",
+        "timeForVerification": 2300
+    }
 
 
 #### Arquitetura do docker para duas aplicações (front e back)
@@ -80,8 +80,8 @@ O container front_desafio_au é responsável por rodar o front com a biblioteca 
 
 
 #### Descrição dos comandos do yarn
-yarn server // inicializa a api
-yarn front // inicializa o front end
+    - yarn server // inicializa a api
+    - yarn front // inicializa o front end
 
 
 ## Comandos docker para rodar o projeto
@@ -90,10 +90,10 @@ Versões usadas:
   - Docker version 20.10.21, build baeda1f82a
   - Docker Compose version 2.12.2
 
-docker-compose up // inicializa os dois containers (api e front)
+    - docker-compose up // inicializa os dois containers (api e front)
 
-acessa a api em http://localhost:9090/restaurants
-acessa o front em http://localhost:9000
+    - acessa a api em http://localhost:9090/restaurants
+    - acessa o front em http://localhost:9000
 
 
 #### Funções de testes unitários com jest

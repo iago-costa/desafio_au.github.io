@@ -15,23 +15,23 @@ A biblioteca *express* foi utilizada para a criação da API, pois é uma biblio
 
 ---
 
-Foi utilizado a linguagem base *typescript* para a criação da API, pois é uma linguagem que permite a tipagem de variáveis, o que facilita a manutenção do código e a leitura do mesmo.
+Foi utilizado a linguagem base **typescript** para a criação da API, pois é uma linguagem que permite a tipagem de variáveis, o que facilita a manutenção do código e a leitura do mesmo.
 
 ---
 
-Foi utilizado o framework *Jest* para a criação dos testes unitários, pois é um framework que permite a criação de testes unitários de forma simples e rápida.
+Foi utilizado o framework **Jest** para a criação dos testes unitários, pois é um framework que permite a criação de testes unitários de forma simples e rápida.
 
 ---
 
-Foi utilizado o *docker* para conteinerização da API e do front-end, pois é uma ferramenta que permite a criação de containers de forma simples e rápida, além de ser uma ferramenta muito utilizada no meio DevOps. O Docker permite criar e configurar ambientes isolados para a execução de aplicações, facilitando a criação de ambientes de desenvolvimento, testes e produção.
+Foi utilizado o **docker** para conteinerização da API e do front-end, pois é uma ferramenta que permite a criação de containers de forma simples e rápida, além de ser uma ferramenta muito utilizada no meio DevOps. O Docker permite criar e configurar ambientes isolados para a execução de aplicações, facilitando a criação de ambientes de desenvolvimento, testes e produção.
 
 Em conjunto ao docker foi utilizado o *docker-compose* para a criação de um arquivo de configuração que permite a criação de múltiplos containers de forma simples e rápida.
 
 ---
 
-Utilizei o *yarn* para a instalação das dependências do projeto, pois é um gerenciador de pacotes que tem um desempenho melhor que o npm, consegue resolver conflitos entre pacotes que o npm não consegue. Além disso, o yarn permite a criação de scripts para a execução de comandos, o que facilita a execução de comandos de forma simples e rápida.
+Utilizei o **yarn** para a instalação das dependências do projeto, pois é um gerenciador de pacotes que tem um desempenho melhor que o npm, consegue resolver conflitos entre pacotes que o npm não consegue. Além disso, o yarn permite a criação de scripts para a execução de comandos, o que facilita a execução de comandos de forma simples e rápida.
 
-O padrão de organização de código utilizado foi o *MVC*, pois é um padrão de organização de código que permite a separação de responsabilidades, facilitando a manutenção do código e a leitura do mesmo.
+O padrão de organização de código utilizado foi o **MVC**, pois é um padrão de organização de código que permite a separação de responsabilidades, facilitando a manutenção do código e a leitura do mesmo.
 
 ---
 
@@ -99,7 +99,9 @@ O container front_desafio_au é responsável por rodar o front com a biblioteca 
 
 ## Comandos docker para rodar o projeto
 Precisa ter o docker e docker-compose instalado na Computador para rodar esse projeto.
-Versões usadas:
+
+    Versões usadas:
+
     - Docker version 20.10.21, build baeda1f82a
     - Docker Compose version 2.12.2
 

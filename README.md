@@ -11,7 +11,7 @@ Foi desenvolvido uma solução do tipo API.
 
 ---
 
-A biblioteca *express* foi utilizada para a criação da API, pois é uma biblioteca de fácil utilização e que permite a criação de rotas de requisição, além de ser muito utilizada no meio dos desenvovedores NodeJS.
+A biblioteca **express** foi utilizada para a criação da API, pois é uma biblioteca de fácil utilização e que permite a criação de rotas de requisição, além de ser muito utilizada no meio dos desenvovedores NodeJS.
 
 ---
 
@@ -25,7 +25,7 @@ Foi utilizado o framework **Jest** para a criação dos testes unitários, pois 
 
 Foi utilizado o **docker** para conteinerização da API e do front-end, pois é uma ferramenta que permite a criação de containers de forma simples e rápida, além de ser uma ferramenta muito utilizada no meio DevOps. O Docker permite criar e configurar ambientes isolados para a execução de aplicações, facilitando a criação de ambientes de desenvolvimento, testes e produção.
 
-Em conjunto ao docker foi utilizado o *docker-compose* para a criação de um arquivo de configuração que permite a criação de múltiplos containers de forma simples e rápida.
+Em conjunto ao docker foi utilizado o **docker-compose** para a criação de um arquivo de configuração que permite a criação de múltiplos containers de forma simples e rápida.
 
 ---
 

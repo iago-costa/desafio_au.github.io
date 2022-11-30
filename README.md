@@ -87,8 +87,8 @@ yarn front // inicializa o front end
 ## Comandos docker para rodar o projeto
 Precisa ter o docker e docker-compose instalado na Computador para rodar esse projeto.
 Versões usadas:
-  Docker version 20.10.21, build baeda1f82a
-  Docker Compose version 2.12.2
+  - Docker version 20.10.21, build baeda1f82a
+  - Docker Compose version 2.12.2
 
 docker-compose up // inicializa os dois containers (api e front)
 

@@ -4,7 +4,7 @@ services:
     container_name: api_desafio_au
     build: 
       context: .
-      dockerfile: Dockerfile.api_desafio_au
+      dockerfile: Dockerfile.api_desafio_au # Dockerfile for the API
     ports:
       - ${API_PORT}:9090
     volumes:
@@ -13,13 +13,13 @@ services:
     command: bash -c 'yarn install && yarn server'
     networks:
       default:
-        ipv4_address: ${API_IP}
+        ipv4_address: ${API_IP} # Defining FIXED IP of the API container
 
   front_desafio_au:
     container_name: front_desafio_au
     build: 
       context: .
-      dockerfile: Dockerfile.front_desafio_au
+      dockerfile: Dockerfile.front_desafio_au # Dockerfile for the Frontend
     ports:
       - ${FRONT_PORT}:9000
     working_dir: /front_desafio_au
@@ -28,7 +28,7 @@ services:
       - .:/front_desafio_au
     networks:
       default:
-        ipv4_address: ${FRONT_IP}
+        ipv4_address: ${FRONT_IP} # Defining FIXED IP of the frontend container
 
 networks:
   default:

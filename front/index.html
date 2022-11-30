@@ -82,7 +82,7 @@
     </footer>
 </body>
 <script>
-    const url = `http://172.27.0.4:9090/restaurants/restaurant-hours.csv/99999`;
+    const url = `http://0.0.0.0:9090/restaurants/restaurant-hours.csv/99999`;
     // ajax call post
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
@@ -110,7 +110,7 @@
         // If there are restaurants open, show them in the screen as a list
         const timeForVerification = document.getElementById('timeForVerification').value.replace(':', '');
         console.log(timeForVerification);
-        const url = `http://172.27.0.4:9090/restaurants/restaurant-hours.csv/${timeForVerification}`;
+        const url = `http://0.0.0.0:9090/restaurants/restaurant-hours.csv/${timeForVerification}`;
         // ajax call post
         const xhr = new XMLHttpRequest();
         xhr.open('GET', url, true);

@@ -2,14 +2,10 @@ import * as fs from "fs";
 import * as path from "path";
 import { parse } from 'csv-parse';
 import { finished } from "stream/promises";
+import RestaurantType from "../models/restaurant.model";
 
-type Restaurant = {
-    id: number;
-    RestaurantName: string;
-    OpenHours: string;
-}
 
-class Restaurants {
+class RestaurantsService {
     // Properties
     // fileName: string; // Name of the CSV file
     // timeForVerification: number; // Time for verification
@@ -21,7 +17,7 @@ class Restaurants {
         this.timeForVerification = timeForVerification;
     }
 
-    returnOpenRestaurants(data: Restaurant[]): Restaurant[] {
+    returnOpenRestaurants(data: RestaurantType[]): RestaurantType[] {
         // Filter the data to return only the restaurants that are open at the time of verification
         // Return the filtered data as an array of objects with the following structure:
         // [
@@ -31,7 +27,7 @@ class Restaurants {
         //         OpenHours: '10:00-22:00'
         //     },
         // ]
-        let open_restaurants: Restaurant[] = [];
+        let open_restaurants: RestaurantType[] = [];
 
         for (let restaurant of data) {
             if (restaurant.id !== 0) {
@@ -52,7 +48,7 @@ class Restaurants {
         return open_restaurants;
     }
 
-    async readCSV(): Promise<Restaurant[]> {
+    async readCSV(): Promise<RestaurantType[]> {
         // Read the CSV file and return the data as an array of objects with the following structure:
         // [
         //     {
@@ -92,4 +88,4 @@ class Restaurants {
 }
 
 
-export { Restaurants, Restaurant };
+export { RestaurantsService, RestaurantType };

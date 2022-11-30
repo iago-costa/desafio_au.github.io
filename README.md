@@ -31,6 +31,8 @@ Em conjunto ao docker foi utilizado o **docker-compose** para a criação de um 
 
 Utilizei o **yarn** para a instalação das dependências do projeto, pois é um gerenciador de pacotes que tem um desempenho melhor que o npm, consegue resolver conflitos entre pacotes que o npm não consegue. Além disso, o yarn permite a criação de scripts para a execução de comandos, o que facilita a execução de comandos de forma simples e rápida.
 
+---
+
 O padrão de organização de código utilizado foi o **MVC**, pois é um padrão de organização de código que permite a separação de responsabilidades, facilitando a manutenção do código e a leitura do mesmo.
 
 ---
